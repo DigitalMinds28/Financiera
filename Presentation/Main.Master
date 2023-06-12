@@ -1,0 +1,92 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="Presentation.Main" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <title> Financiera </title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+<link href="resources/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <%--cabecera--%>
+<header style="text-align: center;">
+    <img src="resources/img/1685418903820.png" style="max-width: 200px; height: auto;">
+</header>
+    <%--barra de navegacion--%> <%--menu nuevo--%>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav ms-auto">
+        <a class="nav-link<%=(Request.Url.AbsolutePath.EndsWith("Index1.aspx") ? " active" : "")%>" href="Index1.aspx">Inicio</a>
+        <a class="nav-link<%=(Request.Url.AbsolutePath.EndsWith("WFUser.aspx") ? " active" : "")%>" href="WFUser.aspx">Usuario</a>
+        <a class="nav-link<%=(Request.Url.AbsolutePath.EndsWith("WFManager.aspx") ? " active" : "")%>" href="WFManager.aspx">Administrador</a>
+        <a class="nav-link<%=(Request.Url.AbsolutePath.EndsWith("WFAccount.aspx") ? " active" : "")%>" href="WFAccount.aspx">Cuenta</a>
+        <a class="nav-link<%=(Request.Url.AbsolutePath.EndsWith("WFAdminControl.aspx") ? " active" : "")%>" href="WFAdminControl.aspx">Control Administrador</a>
+        <a class="nav-link<%=(Request.Url.AbsolutePath.EndsWith("WFCustomer.aspx") ? " active" : "")%>" href="WFCustomer.aspx">Cliente</a>
+        <a class="nav-link<%=(Request.Url.AbsolutePath.EndsWith("WFLocation.aspx") ? " active" : "")%>" href="WFLocation.aspx">Localizacion</a>
+        <a class="nav-link<%=(Request.Url.AbsolutePath.EndsWith("WFTransaction.aspx") ? " active" : "")%>" href="WFTransaction.aspx">Transaccion</a>
+        <a class="nav-link<%=(Request.Url.AbsolutePath.EndsWith("Logout.aspx") ? " active" : "")%>" href="Logout.aspx">Cerrar sesion</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+    <style>
+    body {
+       background: #8e9eab;  /* fallback for old browsers */
+       background: -webkit-linear-gradient(to right, #eef2f3, #8e9eab);  /* Chrome 10-25, Safari 5.1-6 */
+       background: linear-gradient(to right, #eef2f3, #8e9eab); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    }
+</style>
+
+    <%--diseño de cuadricula--%>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+
+            </div>
+            <div class="col-sm-12 col-md-8 col-lg-8 col-xl-8">
+
+            </div>
+        </div> 
+    </div>
+    <form id="form1" runat="server">
+        <%--informacion principal--%>
+        <section>
+            <div>
+           <%--<asp:LinkButton ID="LBInicio" runat="server" OnClick="LBInicio_Click">Inicio</asp:LinkButton>--%>
+            <%--<asp:Label ID="lblMenu" runat="server" Text="Menu  "></asp:Label>--%>
+            <%--<asp:LinkButton ID="LBManager" runat="server" OnClick="LBManager_Click">Administrador   </asp:LinkButton>
+            <asp:LinkButton ID="LBAccount" runat="server" OnClick="LBAccount_Click">Cuenta   </asp:LinkButton>
+            <asp:LinkButton ID="LBControlAdmin" runat="server" OnClick="LBControlAdmin_Click">ControlAdministrador</asp:LinkButton>
+            <asp:LinkButton ID="LBCustomer" runat="server" OnClick="LBCustomer_Click">Cliente</asp:LinkButton>
+            <asp:LinkButton ID="LBLocation" runat="server" OnClick="LBLocation_Click">Localizacion</asp:LinkButton>
+            <asp:LinkButton ID="LBTransaction" runat="server" OnClick="LBTransaction_Click">Transaction</asp:LinkButton>--%>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        </section>
+    </form>
+    <%--pie de pagina--%>
+<footer class="bg-dark text-light py-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <asp:Label ID="Label1" runat="server" Text="2023 © Fundación Universitaria de Popayán<------->Desarrollado por: Estudiantes VIII semestre Ingeniería de Sistemas." CssClass="text-muted"></asp:Label>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <%--bootstrap--%>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
